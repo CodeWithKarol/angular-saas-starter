@@ -1,0 +1,41 @@
+@use "@angular/material" as mat;
+@use "tailwindcss";
+
+$theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$violet-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  typography: (
+    brand-family: 'Roboto',
+  ),
+));
+
+html {
+  @include mat.all-component-themes($theme);
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+app-home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+main {
+  flex: 1;
+}
